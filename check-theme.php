@@ -4,7 +4,7 @@ function get_theme_versions($theme_name) {
   for ($i = 0; $i < count($theme_name); $i++) {
     $theme_data = get_theme_data( get_theme_root() . '/' . $theme_name[$i] . '/style.css' );
     $local_version=$theme_data['Version'];
-  $local_version='0.5';
+//    $local_version='0.5';
     if (($theme_data['Author']==get_option('check_my_version_theme')) || (get_option('check_my_version_theme')== '')) {
       $var_sHtml .= "<li>{$theme_data['Title']} (v. {$theme_data['Version']} ) By {$theme_data['Author']}.</li>";
       compare_versions($theme_name[$i],$local_version);

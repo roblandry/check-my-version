@@ -17,7 +17,7 @@ function get_plugin_version($author) {
     $plugin_data['Author'] = wp_kses($plugin_data['Author'], $plugins_allowedtags1);
     $plugin_data['Author'] = (empty($plugin_data['Author'])) ? '' : ' <cite>' . sprintf(__('%s', 'wp-list-plugins'), ($plugin_data['AuthorURI']) ? '<a href="' . $plugin_data['AuthorURI'] . '">' . $plugin_data['Author'] . '</a>' : $plugin_data['Author']) . '.</cite>';
     $local_version=$plugin_data['Version'];
-//  $local_version='0.5';
+//    $local_version='0.5';
     if ( 
       (strpos($plugin_data['Author'], $plugin_author) ==true ) || 
       (strpos($plugin_data['Name'],'Rob')== true ) ||
@@ -25,7 +25,7 @@ function get_plugin_version($author) {
         $var_sHtml .= "<li>{$plugin_data['Title']} (v. {$plugin_data['Version']} ) By {$plugin_data['Author']}.</li>";
         $p_arr=explode("/", $plugin_file);
         $p_file=$p_arr[0];
-        compare_versions($p_file,$plugin_data['Version']);
+        compare_versions($p_file,$local_version);
     }
     $var_iPlugInNumber++;
   }
